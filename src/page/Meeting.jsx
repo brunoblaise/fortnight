@@ -1,8 +1,10 @@
 import React, {useEffect} from 'react';
 import axios from 'axios';
 import {Helmet} from "react-helmet";
-function Video({match}) {
-  const id = match.params.id;
+import {useParams} from 'react-router-dom';
+
+function Video() {
+  const {id} = useParams()
 
   useEffect(() => {
     const domain = 'https://brunoblaise.daily.co/';
