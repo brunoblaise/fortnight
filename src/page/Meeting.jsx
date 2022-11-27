@@ -7,7 +7,7 @@ function Video({match}) {
   useEffect(() => {
     const domain = 'https://brunoblaise.daily.co/';
     axios
-      .get(`https://serene-tor-16642.herokuapp.com/video-call/${id}`)
+      .get(`https://video-chat-3jb3.onrender.com/video-call/${id}`)
       .then((res) => {
         if (res.status === 200) {
           const script = document.createElement('script');

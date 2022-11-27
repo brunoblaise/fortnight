@@ -24,7 +24,7 @@ function TextEditor() {
   const [quill, setQuill] = useState();
 
   useEffect(() => {
-    const s = io('https://college-du-1.herokuapp.com');
+    const s = io('https://mongodocu.onrender.com');
     setSocket(s);
 
     return () => {
