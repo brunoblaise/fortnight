@@ -24448,7 +24448,7 @@ div.tagsinput span.tag a {
   overflow: hidden;
   flex-wrap: nowrap;
   flex-direction: column;
-  margin-bottom: 60px;
+  
 }
 
 .sidebar .nav .nav-item {
@@ -26019,8 +26019,9 @@ div.tagsinput span.tag a {
 }
 .main__chatcontent {
   flex-grow: 1;
+
   padding: 20px 40px;
-  max-width: 63%;
+  max-width: 83%;
   border-right: 1px solid #ebe7fb;
 }
 .content__header {
@@ -26274,7 +26275,10 @@ div.tagsinput span.tag a {
   min-height: 80vh;
   width: 100%;
   border-radius: 10px;
+  margin: 20px;
   padding: 20px;
+  position: relative;
+  bottom:10px;
   display: flex;
   padding-left: 0;
 }
@@ -26912,7 +26916,7 @@ footer a {
   flex-grow: 1;
   background-color: #f4f3f8;
   border-radius: 10px;
-  padding: 15px 20px;
+  padding: 5px 20px;
   display: flex;
 }
 .aerq {
@@ -27015,14 +27019,7 @@ footer a {
   }
 }
 
-.wrapper {
-  width: 1050px;
-  margin: 30px auto;
 
-  position: relative;
-  left: -23px;
-  top: 108px;
-}
 
 .main:after {
   clear: both;

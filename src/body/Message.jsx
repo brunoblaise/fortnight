@@ -8,6 +8,8 @@ import {LazyLoadImage} from 'react-lazy-load-image-component';
 import {url} from '../url';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import {useStoreState} from 'easy-peasy';
+import Header from '../header/Header';
+import Sidebar from '../sidebar/Sidebar';
 function Message() {
   const [message, setMessage] = useState([]);
 
@@ -66,6 +68,10 @@ function Message() {
 
         <title>Message</title>
       </Helmet>
+      <Header />
+      <div className='container-fluid page-body-wrapper'>
+      <Sidebar />
+
       <div className='__main'>
         <div className='nav'>
           <div className='nav__blocks'></div>
@@ -115,8 +121,6 @@ function Message() {
                   </div>
                 ))}
                 
-
-                <div></div>
               </div>
             </div>
             <div className='content__footer'>
@@ -124,6 +128,7 @@ function Message() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

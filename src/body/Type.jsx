@@ -17,9 +17,10 @@ function Type() {
 
   const {id} = useParams();
   const {User} = useStoreState((state) => state);
+  
 
   const {profile} = User;
-
+  
   const own = profile.map((profil) => profil.class_student);
 
   const getProfile = async () => {
@@ -68,6 +69,7 @@ function Type() {
     getProfil();
   }, [setMessag]);
 
+  
   return (
     <div className='col-lg-12 grid-margin stretch-card'>
       <Helmet>
@@ -114,8 +116,11 @@ function Type() {
 
                       <th scope='col'>Level</th>
                       <th scope='col'>Category</th>
-                      <th scope='col'>duration</th>
-                      <th scope='col'>type</th>
+                      <th scope='col'>Duration</th>
+                      <th scope='col'>Type</th>
+                      <th scope='col'>Status</th>
+
+
                     </tr>
                   </thead>
                   {loading
@@ -136,16 +141,28 @@ function Type() {
                           <tbody key={fil.id}>
                             <tr>
                               <td>
-                                <Link to={`/room/quiz/${fil.course_name}`}>
-                                  {fil.course_name}
-                                </Link>
+                              {
+                                 fil.status === 'Done' ? (
+                                  <Link>You submission is done</Link>
+                                  )
+
+:(
+  <Link to={`/open/question/${fil.course_name}`}>
+  {fil.course_name}
+  </Link>
+)
+                                }
                               </td>
 
                               <td>{fil.course_level}</td>
                               <td>{fil.course_category}</td>
                               <td>{fil.course_duration}</td>
                               <td>{fil.course_type}</td>
+                              <td>{fil.status}</td>
+                        
+
                             </tr>
+
                           </tbody>
                         ))}
                 </table>
@@ -187,8 +204,10 @@ function Type() {
 
                       <th scope='col'>Level</th>
                       <th scope='col'>Category</th>
-                      <th scope='col'>duration</th>
-                      <th scope='col'>type</th>
+                      <th scope='col'>Duration</th>
+                      <th scope='col'>Type</th>
+                      <th scope='col'>Status</th>
+
                     </tr>
                   </thead>
                   {loading
@@ -209,15 +228,25 @@ function Type() {
                           <tbody key={fil.id}>
                             <tr>
                               <td>
-                                <Link to={`/open/question/${fil.course_name}`}>
-                                  {fil.course_name}
-                                </Link>
+                                {
+                                 fil.status === 'Done' ? (
+                                  <Link>You submission is done</Link>
+                                  )
+
+:(
+  <Link to={`/open/question/${fil.course_name}`}>
+  {fil.course_name}
+  </Link>
+)
+                                }
                               </td>
 
                               <td>{fil.course_level}</td>
                               <td>{fil.course_category}</td>
                               <td>{fil.course_duration}</td>
                               <td>{fil.course_type}</td>
+                             <td>{fil.status}</td>
+
                             </tr>
                           </tbody>
                         ))}

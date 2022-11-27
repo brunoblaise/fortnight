@@ -1,18 +1,10 @@
 import React from 'react';
-import {toast} from 'react-toastify';
+
+
 import {Link} from 'react-router-dom';
-function Sidebar({setAuth}) {
-  const logout = async (e) => {
-    e.preventDefault();
-    try {
-      localStorage.removeItem('token');
-      setAuth(false);
-      toast.success('Logout successfully');
-    } catch (err) {
-      console.error(err.message);
-      
-    }
-  };
+
+function Sidebar() {
+
   return (
     <nav className='sidebar sidebar-offcanvas' id='sidebar'>
       <ul className='nav'>
@@ -129,13 +121,6 @@ function Sidebar({setAuth}) {
         <br />
         <br />
         <br />
-    
-        <li className='nav-item active' onClick={(e) => logout(e)}>
-          <Link className='nav-link' to='/'>
-            <i className='bi bi-box-arrow-left  menu-icon'></i>
-            <span className='menu-title'>Log out</span>
-          </Link>
-        </li>
       </ul>
     </nav>
   );

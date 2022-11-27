@@ -7,11 +7,12 @@ import ReactQuill from 'react-quill';
 
 import 'react-quill/dist/quill.snow.css';
 import EditorToolBar, {modules, formats} from './EditorToolBar';
-import {useStoreState} from 'easy-peasy';
+import {useStoreActions, useStoreState} from 'easy-peasy';
 import { useParams } from 'react-router-dom';
 
 function Written() {
   const {User} = useStoreState((state) => state);
+  
 
   const {profile} = User;
 
@@ -24,6 +25,8 @@ function Written() {
   const [course] = id;
   const name = idle;
   const [content, setContent] = useState('');
+  const status = 'Done';
+
   const handleChange = (value) => {
     setContent(value);
   };
@@ -57,6 +60,7 @@ function Written() {
         content,
         name,
         teacher,
+        status,
       };
       const response = await fetch(`${url}/create/answers`, {
         method: 'POST',
@@ -66,8 +70,11 @@ function Written() {
         body: JSON.stringify(body),
       });
 
+      
       if (response.status === 200) {
         toast.success('Sent Successfully');
+        
+      
       } else {
         toast.error('Something is wrong');
       }
