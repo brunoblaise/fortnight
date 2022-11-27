@@ -7,7 +7,7 @@ import ReactQuill from 'react-quill';
 
 import 'react-quill/dist/quill.snow.css';
 import EditorToolBar, {modules, formats} from './EditorToolBar';
-import {useStoreActions, useStoreState} from 'easy-peasy';
+import {useStoreState} from 'easy-peasy';
 import { useParams } from 'react-router-dom';
 
 function Written() {
@@ -58,8 +58,8 @@ function Written() {
         course,
         level,
         content,
-        name,
         teacher,
+        name,
         status,
       };
       const response = await fetch(`${url}/create/answers`, {
